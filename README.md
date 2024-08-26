@@ -2,7 +2,6 @@
 Personal notes about how to set up Nvidia drivers and steam on my laptop
 ## Pre-install notes
 * This is my personal experience on my specific laptop (Dell G5 5590) so your mileage may vary
-* **Big note: I never got my nvidia card working as my primary GPU. Everytime I followed instructions and set it as my primary, it would boot but not display anything after it got the login screen. FYI.**
 * I would also encourage you to look at https://github.com/devangshekhawat/Fedora-40-Post-Install-Guide as they have some good info and commands there
 * This guide (notes really) uses Fedora 40 workstation XCFE spin, you might have an easier time using the default gnome distro
 ## Fedora reimage notes
@@ -52,11 +51,21 @@ reboot
 ```bash
 sudo dnf install xrandr inxi switcheroo-control nvidia-xconfig
 ```
+### _Switch to nvidia as primary GPU_
+* Found https://github.com/bayasdev/envycontrol recommended on a reddit thread and it worked like magic, so as per the source:
+* Note: modes are integrated, hybrid, nvidia
+```bash
+sudo dnf copr enable sunwire/envycontrol
+sudo dnf install python3-envycontrol
+sudo envycontrol -s <MODE>
+reboot
+```
 ### _Install steam_
 ```bash
 sudo dnf install steam
 ```
 ### _Update steam shortcut_
+#### Note: Use this only if you have to, I have since been able to set nvidia as my primary display, see above
 I needed to replace the command that steam.desktop ran to ensure it used my second (Nvidia) GPU\
 Location of steam.desktop: /usr/share/applications/steam.desktop\
 You can use an editor of your choice but I used `vim`
