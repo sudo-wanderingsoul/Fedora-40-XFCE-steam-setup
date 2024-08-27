@@ -38,22 +38,26 @@ sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidi
 * **_IMPORTANT: Confirm the akmod process has completed building the driver, this takes around 5-10 minutes_**
 * Can use `htop`, `top`, or `ps` to view running processes
 * **_ONCE AND ONLY ONCE THE NVIDIA DRIVER HAS BEEN BUILT, RUN THE FOLLOWING COMMANDS_**
+* * **_Wait 3-5 minutes, per Fedora docs, then reboot_**
 ```bash
 sudo akmods --force
 sudo dracut --force
-```
-* **_Wait 3-5 minutes, per Fedora docs, then reboot_**
-```bash
 reboot
 ```
 ### _Install support/diag packages_
-* The only necessary packages is switheroo but the other packages help with diagnostic data just in case something goes wrong
+* Packages to help with diagnostic data just in case something goes wrong
+* NOTE: nvidia-smi command is very helpful
 ```bash
-sudo dnf install xrandr inxi switcheroo-control nvidia-xconfig
+sudo dnf install xrandr inxi xorg-x11-drv-nvidia-cuda
 ```
-### _Switch to nvidia as primary GPU_
+### _Switcheroo control package (optional)_
+* Package in case you want to be able to spectify which GPU a program launches on
+```bash
+sudo dnf install switcheroo-control
+```
+### _Switch to nvidia as primary GPU (if wanted)_
 * Found https://github.com/bayasdev/envycontrol recommended on a reddit thread and it worked like magic, so as per the source:
-* Note: modes are integrated, hybrid, nvidia
+* Note: modes are: integrated, hybrid, nvidia
 ```bash
 sudo dnf copr enable sunwire/envycontrol
 sudo dnf install python3-envycontrol
@@ -64,7 +68,7 @@ reboot
 ```bash
 sudo dnf install steam
 ```
-### _Update steam shortcut_
+### _Update steam shortcut / switcheroo-control use example_
 #### Note: Use this only if you have to, I have since been able to set nvidia as my primary display, see above
 I needed to replace the command that steam.desktop ran to ensure it used my second (Nvidia) GPU\
 Location of steam.desktop: /usr/share/applications/steam.desktop\
