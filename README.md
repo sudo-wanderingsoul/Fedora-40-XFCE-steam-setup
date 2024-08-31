@@ -57,7 +57,7 @@ sudo dnf install switcheroo-control
 ```
 ### _Switch to nvidia as primary GPU (if wanted)_
 * Found https://github.com/bayasdev/envycontrol recommended on a reddit thread and it worked like magic, so as per the source:
-* Note: modes are: integrated, hybrid, nvidia
+* Note: modes are - integrated, hybrid, nvidia
 ```bash
 sudo dnf copr enable sunwire/envycontrol
 sudo dnf install python3-envycontrol
