@@ -56,7 +56,7 @@ sudo dnf install xrandr inxi xorg-x11-drv-nvidia-cuda
 sudo dnf install switcheroo-control
 ```
 ### _Switch to nvidia as primary GPU (if wanted)_
-* Found https://github.com/bayasdev/envycontrol recommended on a reddit thread and it worked like magic, so as per the source:
+* Found https://github.com/bayasdev/envycontrol was recommended on a reddit thread and it worked like magic on Fedora
 * Note: modes are - integrated, hybrid, nvidia
 ```bash
 sudo dnf copr enable sunwire/envycontrol
