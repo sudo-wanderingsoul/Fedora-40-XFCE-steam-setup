@@ -58,6 +58,7 @@ sudo dnf install switcheroo-control
 ### _Switch to nvidia as primary GPU (if wanted)_
 * Found https://github.com/bayasdev/envycontrol was recommended on a reddit thread and it worked like magic on Fedora
 * Note: modes are - integrated, hybrid, nvidia
+* Personally I set it to hybrid so iGPU does the normal display things and the dGPU does the heavy lifting
 ```bash
 sudo dnf copr enable sunwire/envycontrol
 sudo dnf install python3-envycontrol
