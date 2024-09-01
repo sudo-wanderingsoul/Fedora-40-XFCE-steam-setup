@@ -95,7 +95,7 @@ inxi -Fzxx
 switcherooctl list
 ```
 ##### Google search and fedora forums helped me add missing bits of info
-* If all else fails, google search specific symptons aka "fedora nvidia not showing GPU" or look search the [Fedora forums](https://discussion.fedoraproject.org)
+* If all else fails, google search specific symptons aka "fedora nvidia not showing GPU" or search the [Fedora forums](https://discussion.fedoraproject.org)
 ###### Forums to start debuging with
 * https://discussion.fedoraproject.org/t/optimus-setting-the-nvidia-gpu-as-primary-rpmfusion-in-fedora-32-workstation/72796
 * https://www.reddit.com/r/Fedora/comments/ga1ek6/optimus_setting_the_nvidia_gpu_as_primary/
