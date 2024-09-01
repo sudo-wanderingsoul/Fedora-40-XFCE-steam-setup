@@ -38,7 +38,6 @@ sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidi
 * **_IMPORTANT: Confirm the akmod process has completed building the driver, this takes around 5-10 minutes_**
 * Can use `htop`, `top`, or `ps` to view running processes
 * **_ONCE AND ONLY ONCE THE NVIDIA DRIVER HAS BEEN BUILT, RUN THE FOLLOWING COMMANDS_**
-* * **_Wait 3-5 minutes, per Fedora docs, then reboot_**
 ```bash
 sudo akmods --force
 sudo dracut --force
