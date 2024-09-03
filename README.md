@@ -32,7 +32,7 @@ reboot
 ```
 ### _Install nvidia drivers after reboot_
 ```bash
-sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 nvidia-gpu-firmware vulkan-tools
+sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia
 ```
 [Link to specific Fedora how-to page](https://docs.fedoraproject.org/en-US/quick-docs/set-nvidia-as-primary-gpu-on-optimus-based-laptops/#_step_5_wait_for_the_kernel_modules_to_load_up)
 * **_IMPORTANT: Confirm the akmod process has completed building the driver, this takes around 5-10 minutes_**
