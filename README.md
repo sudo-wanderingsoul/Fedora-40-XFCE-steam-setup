@@ -56,8 +56,9 @@ sudo dnf install xrandr inxi xorg-x11-drv-nvidia-cuda
 sudo dnf install switcheroo-control
 ```
 ### _Nvidia CUDA install section (optional)_
-[RPM Fusion source](https://rpmfusion.org/Howto/CUDA)
-* Installs CUDA core libraries and dev kit
+- [RPM Fusion source](https://rpmfusion.org/Howto/CUDA)
+- [Nvidia docs source](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#fedora)\
+I used the RPM fusion source as it's easier
 ```bash
 sudo dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/fedora39/x86_64/cuda-fedora39.repo
 sudo dnf clean all
@@ -65,9 +66,9 @@ sudo dnf module disable nvidia-driver
 sudo dnf -y install cuda
 ```
 ### _Switch to nvidia as primary GPU (optional)_
-* Found https://github.com/bayasdev/envycontrol was recommended on a reddit thread and it worked like magic on Fedora
-* Note: modes are - integrated, hybrid, nvidia
-* Personally I set it to hybrid so iGPU does the normal display things and the dGPU does the heavy lifting
+* Found https://github.com/bayasdev/envycontrol was recommended on a reddit thread and it worked like magic on Fedora\
+Modes are - integrated, hybrid, nvidia\
+Personally I set it to hybrid so iGPU does the normal display things and the dGPU does the heavy lifting
 ```bash
 sudo dnf copr enable sunwire/envycontrol
 sudo dnf install python3-envycontrol
