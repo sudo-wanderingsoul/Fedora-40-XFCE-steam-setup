@@ -17,8 +17,8 @@ Personal notes about how to set up Nvidia drivers and steam on my laptop
 * Done (or at least what worked for me)
 ## Actual install notes
 Assumes you have already installed Fedora 40 workstations XFCE spin, sources I used below
-* [RPMFusion how-to source](https://rpmfusion.org/Howto/NVIDIA "RPM Fusion Instructions")
-* [Fedora Quick Docs source](https://docs.fedoraproject.org/en-US/quick-docs/set-nvidia-as-primary-gpu-on-optimus-based-laptops/ "Fedora Docs")
+- [RPMFusion how-to source](https://rpmfusion.org/Howto/NVIDIA "RPM Fusion Instructions")
+- [Fedora Quick Docs source](https://docs.fedoraproject.org/en-US/quick-docs/set-nvidia-as-primary-gpu-on-optimus-based-laptops/ "Fedora Docs")
 ### _Install RPM fusion free and nonfree repos_
 ```bash
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
@@ -43,7 +43,8 @@ sudo akmods --force
 sudo dracut --force
 reboot
 ```
-### _Install support/diag packages_
+## _The following are optional packages_
+### **Install support/diag packages (optional)**
 * Packages to help with diagnostic data just in case something goes wrong
 * NOTE: nvidia-smi command is very helpful
 ```bash
@@ -54,7 +55,16 @@ sudo dnf install xrandr inxi xorg-x11-drv-nvidia-cuda
 ```bash
 sudo dnf install switcheroo-control
 ```
-### _Switch to nvidia as primary GPU (if wanted)_
+### _Nvidia CUDA install section (optional)_
+[RPM Fusion source](https://rpmfusion.org/Howto/CUDA)
+* Installs CUDA core libraries and dev kit
+```bash
+sudo dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/fedora39/x86_64/cuda-fedora39.repo
+sudo dnf clean all
+sudo dnf module disable nvidia-driver
+sudo dnf -y install cuda
+```
+### _Switch to nvidia as primary GPU (optional)_
 * Found https://github.com/bayasdev/envycontrol was recommended on a reddit thread and it worked like magic on Fedora
 * Note: modes are - integrated, hybrid, nvidia
 * Personally I set it to hybrid so iGPU does the normal display things and the dGPU does the heavy lifting
@@ -64,11 +74,12 @@ sudo dnf install python3-envycontrol
 sudo envycontrol -s <MODE>
 reboot
 ```
+## _Steam install section_
 ### _Install steam_
 ```bash
 sudo dnf install steam
 ```
-### _Update steam shortcut / switcheroo-control use example_
+### _Update steam shortcut / switcheroo-control use example (optional)_
 #### Note: Use this only if you have to, I have since been able to set nvidia as my primary display, see above
 I needed to replace the command that steam.desktop ran to ensure it used my second (Nvidia) GPU\
 Location of steam.desktop: /usr/share/applications/steam.desktop\
@@ -81,7 +92,7 @@ vim /usr/share/applications/steam.desktop
 * Save and exit steam.desktop
 * You should be able to launch steam via the shortcut and it use the correct GPU\
 If anything doesn't work after this, use the [Diag section](https://github.com/sudo-wanderingsoul/Fedora-40-XFCE-steam-setup/edit/main/README.md#diag-command-section) to help
-### _Diag command section_
+## _Diagostic commands and general help section_
 ##### Check which processes are using the Nvidia GPU
 ```bash
 nvidia-smi
