@@ -91,7 +91,7 @@ vim /usr/share/applications/steam.desktop
 * Replacement with: `Exec=sh -c "/usr/bin/switcherooctl -g 1 /usr/bin/steam %U"`
 * Save and exit steam.desktop
 * You should be able to launch steam via the shortcut and it use the correct GPU\
-If anything doesn't work after this, use the below diagnostic to help
+If anything doesn't work after this, use the below diagnostic section to help
 ## _Diagnostic commands and general help section_
 ##### Check which processes are using the Nvidia GPU
 ```bash
