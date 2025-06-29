@@ -46,7 +46,7 @@ reboot
 ## _The following are optional packages_
 ### **Install support/diag packages (optional)**
 * Packages to help with diagnostic data just in case something goes wrong
-* NOTE: nvidia-smi command is very helpful
+* NOTE: nvidia-smi command from xorg-x11-drv-nvidia-cuda package is very helpful
 ```bash
 sudo dnf install xrandr inxi xorg-x11-drv-nvidia-cuda
 ```
