@@ -1,9 +1,9 @@
-# Fedora-40-XFCE-steam-setup
+# Fedora-42-XFCE-steam-setup
 Personal notes about how to set up Nvidia drivers and steam on my laptop
 ## Pre-install notes
 * This is my personal experience on my specific laptop (Dell G5 5590) so your mileage may vary
 * I would also encourage you to look at https://github.com/devangshekhawat/Fedora-40-Post-Install-Guide as they have some good info and commands there
-* This guide (notes really) uses Fedora 40 workstation XCFE spin, you might have an easier time using the default gnome distro
+* This guide (notes really) uses Fedora 42 workstation XCFE spin, you might have an easier time using the default gnome distro
 ## Fedora reimage notes
 * I used a USB-C thumbdrive I picked up from micro center to install Fedora (used my thunderbolt port, after I set it to allow bootable media in the BIOS)
 * Using a USB-C (instead of USB-A) saved me because I was able to re-image my thumbdrive from my phone using the 'Flasher' app when I borked up my laptop.
@@ -36,7 +36,7 @@ sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia
 ```
 [Link to specific Fedora how-to page](https://docs.fedoraproject.org/en-US/quick-docs/set-nvidia-as-primary-gpu-on-optimus-based-laptops/#_step_5_wait_for_the_kernel_modules_to_load_up)
 * **_IMPORTANT: Confirm the akmod process has completed building the driver, this takes around 5-10 minutes_**
-* Can use `htop`, `top`, or `ps` to view running processes
+* Can use `btop`, `htop`, `top`, or `ps` to view running processes
 * **_ONCE AND ONLY ONCE THE NVIDIA DRIVER HAS BEEN BUILT, RUN THE FOLLOWING COMMANDS_**
 ```bash
 sudo akmods --force
@@ -44,28 +44,23 @@ sudo dracut --force
 reboot
 ```
 ## _The following are optional packages_
-### **Install support/diag packages (optional)**
-* Packages to help with diagnostic data just in case something goes wrong
-* NOTE: nvidia-smi command from xorg-x11-drv-nvidia-cuda package is very helpful
+### **Install NVIDIA Cuda support (optional but recommended)**
+* NOTE: nvidia-smi command from package is very useful
 ```bash
-sudo dnf install xrandr inxi xorg-x11-drv-nvidia-cuda
+sudo dnf install xorg-x11-drv-nvidia-cuda
+```
+### **Install additional support/diag packages (optional)**
+* Packages to help with diagnostic data just in case something goes wrong
+```bash
+sudo dnf install xrandr inxi
 ```
 ### _Switcheroo control package (optional)_
 * Package in case you want to be able to spectify which GPU a program launches on
 ```bash
 sudo dnf install switcheroo-control
 ```
-### _Nvidia CUDA install section (optional)_
-- [RPM Fusion source](https://rpmfusion.org/Howto/CUDA)
-- [Nvidia docs source](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#fedora)\
-I used the RPM fusion source as it's easier
-```bash
-sudo dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/fedora39/x86_64/cuda-fedora39.repo
-sudo dnf clean all
-sudo dnf module disable nvidia-driver
-sudo dnf -y install cuda
-```
 ### _Switch to nvidia as primary GPU (optional)_
+* The following is a third-party repo/package, proceed with caution in that knowledge
 - Found https://github.com/bayasdev/envycontrol was recommended on a reddit thread and it worked like magic on Fedora
 - Modes are - "integrated", "hybrid", "nvidia"
 ```bash
