@@ -2,7 +2,7 @@
 Personal notes about how to set up Nvidia drivers and steam on my laptop
 ## Pre-install notes
 * This is my personal experience on my specific laptop (Dell G5 5590) so your mileage may vary
-* I would also encourage you to look at https://github.com/devangshekhawat/Fedora-40-Post-Install-Guide as they have some good info and commands there
+* I would also encourage you to look at https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide as they have some good info and commands there
 * This guide (notes really) uses Fedora 42 workstation XCFE spin, you might have an easier time using the default gnome distro
 ## Fedora reimage notes
 * I used a USB-C thumbdrive I picked up from micro center to install Fedora (used my thunderbolt port, after I set it to allow bootable media in the BIOS)
@@ -16,7 +16,7 @@ Personal notes about how to set up Nvidia drivers and steam on my laptop
 * Select the image you want, select the USB drive, and image the drive
 * Done (or at least what worked for me)
 ## Actual install notes
-Assumes you have already installed Fedora 40 workstations XFCE spin, sources I used below
+Assumes you have already installed Fedora 42 workstations XFCE spin, sources I used below
 - [RPMFusion how-to source](https://rpmfusion.org/Howto/NVIDIA "RPM Fusion Instructions")
 - [Fedora Quick Docs source](https://docs.fedoraproject.org/en-US/quick-docs/set-nvidia-as-primary-gpu-on-optimus-based-laptops/ "Fedora Docs")
 ### _Install RPM fusion free and nonfree repos_
