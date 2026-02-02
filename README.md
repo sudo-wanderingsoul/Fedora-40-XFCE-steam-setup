@@ -3,7 +3,7 @@ Personal notes about how to set up Nvidia drivers and steam on my laptop
 ## Pre-install notes
 * This is my personal experience on my specific laptop (Dell G5 5590) so your mileage may vary
 * I would also encourage you to look at https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide as they have some good info and commands there
-* This guide (notes really) uses Fedora 42 workstation XCFE spin, you might have an easier time using the default gnome distro
+* This guide (notes really) uses Fedora 42 workstation XFCE spin, you might have an easier time using the default gnome distro
 ## Fedora reimage notes
 * I used a USB-C thumbdrive I picked up from micro center to install Fedora (used my thunderbolt port, after I set it to allow bootable media in the BIOS)
 * Using a USB-C (instead of USB-A) saved me because I was able to re-image my thumbdrive from my phone using the 'Flasher' app when I borked up my laptop.
