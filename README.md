@@ -58,6 +58,21 @@ sudo dnf install xrandr inxi
 * Package in case you want to be able to spectify which GPU a program launches on
 ```bash
 sudo dnf install switcheroo-control
+sudo systemctl enable switcheroo-control.service
+sudo systemctl start switcheroo-control.service
+man switcherooctl ##This will show you how to use the package
+switcherooctl ##This will list the GPUs it sees
+```
+* TL;DR, "JUST TELL ME HOW TO DO IT!"
+```
+1) Open up Steam
+2) Right click on the game you want to play
+3) Select 'Properties' from the window that poops up'
+4) Make sure you're in the 'General' tab (should be what's selected by default)
+5) In the launch options box, type (or paste) 'switcherooctl launch -g 1 %command%'
+5a) The -g <number> above is very important, make sure '1' is your discrete GPU, other switch to match which number it is
+6) Confirm the config stuck by switching tabs / clicking out of the options then opening 'properties' back up
+7) Launch the damn thang
 ```
 ### _Switch to nvidia as primary GPU (optional)_
 * The following is a third-party repo/package, proceed with caution in that knowledge
