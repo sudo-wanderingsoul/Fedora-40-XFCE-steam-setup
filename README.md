@@ -67,10 +67,10 @@ switcherooctl ##This will list the GPUs it sees
 ```
 1) Open up Steam
 2) Right click on the game you want to play
-3) Select 'Properties' from the window that pops up'
+3) Select 'Properties' from the window that pops up
 4) Make sure you're in the 'General' tab (should be what's selected by default)
 5) In the launch options box, type (or paste) 'switcherooctl launch -g 1 %command%'
-5a) The -g <number> above is very important, make sure '1' is your discrete GPU, other switch to match which number it is
+5a) The -g <number> above is very important, make the number matches what switcherooctl sees your GPU as
 6) Confirm the config stuck by switching tabs / clicking out of the options then opening 'properties' back up
 7) Launch the damn thang
 ```
